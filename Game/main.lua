@@ -10,9 +10,9 @@ W = display.viewableContentWidth;
 local rectangle=require("rectangle");
 
 
---  DEFAULT MODULES  --
+--  DEFAULT MODULES  --	
 local physics = require("physics");
 
 
-local rec1=rectangle.new();
+local rec1=rectangle.new('red');
 
