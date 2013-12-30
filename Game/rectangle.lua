@@ -18,7 +18,7 @@ local new = function(boja)
 
 	-- Position --
 	rec.anchorX = rec.width / 2; rec.anchorY = rec.height / 2; 
-	rec.x = math.random((rec.width + 10),W-10); rec.y = -60;
+	rec.x = math.random((rec.width + 10),W-10); rec.y = 0;
 		
 	-- Gravity --
 	physics.addBody(rec,{density=math.random(-10,10)});
@@ -26,12 +26,24 @@ local new = function(boja)
 
 	-- Touch --
 	function rec:touch(e)
+		local tmp = e.target
+
 		if (e.phase == "began") then
-			print("djoka");
+
+			physics.removeBody(self);
+
+			tmp.x0 = e.x - tmp.x
+			tmp.y0 = e.y - tmp.y
+			
+			display.getCurrentStage():setFocus(e.target, e.id);
 		elseif (e.phase == "moved") then 
-			print("djoka2");
+
+			transition.to(self,{x = e.x - tmp.x0, y = e.y - tmp.y0, time = 20});
 		elseif (e.phase == "ended") then
-			print("djoka3");
+
+			physics.addBody(self,"kinematic");
+
+			display.getCurrentStage():setFocus(nil);
 		end
 	end
 
