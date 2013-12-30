@@ -4,4 +4,5 @@
 --
 -----------------------------------------------------------------------------------------
 
--- Your code here
+local Rec1= display.newImage('prvi.png')
+local Rec2= display.newImage('drugi.png')
