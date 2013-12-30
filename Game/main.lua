@@ -10,7 +10,7 @@ W = display.viewableContentWidth;
 --  DEFAULT MODULES  --	
 local physics = require("physics");
 physics.start();
-physics.setGravity(0,3);
+physics.setGravity(0,2);
 
 --  CUSTOM MODULES  --
 local rectangle=require("rectangle");

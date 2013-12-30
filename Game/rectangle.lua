@@ -23,6 +23,20 @@ local new = function(boja)
 	-- Gravity --
 	physics.addBody(rec,{density=math.random(-10,10)});
 
+
+	-- Touch --
+	function rec:touch(e)
+		if (e.phase == "began") then
+			print("djoka");
+		elseif (e.phase == "moved") then 
+			print("djoka2");
+		elseif (e.phase == "ended") then
+			print("djoka3");
+		end
+	end
+
+	rec:addEventListener("touch",rec);
+
 	return rec;
 end
 
