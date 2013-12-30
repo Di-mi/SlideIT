@@ -10,18 +10,18 @@ local new = function(boja)
 	
 	-- Type --
 	if(boja=='red') then
-		rec= display.newImage('Images/prvi.png');
+		rec= display.newImage('img/prvi.png');
 	end
 	if(boja=='purple') then
-		rec= display.newImage('Images/drugi.png');
+		rec= display.newImage('img/drugi.png');
 	end	
 
 	-- Position --
 	rec.anchorX = rec.width / 2; rec.anchorY = rec.height / 2; 
-	rec.x = math.random((rec.width + 10),W-10); rec.y = -50;
+	rec.x = math.random((rec.width + 10),W-10); rec.y = -60;
 		
 	-- Gravity --
-	physics.addBody(rec);
+	physics.addBody(rec,{density=math.random(-20,20)});
 
 	return rec;
 end
