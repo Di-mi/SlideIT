@@ -15,10 +15,12 @@ physics.setGravity(0,3);
 --  CUSTOM MODULES  --
 local rectangle=require("rectangle");
 
---  Body  --
+--  BODY  --
+
+-- object creation --
 local function spawnRactangle()
 	local rec=rectangle.new('purple');
 end
 
-tmr = timer.performWithDelay(math.random(500,2000),spawnRactangle, -1);
+tmr = timer.performWithDelay(math.random(2000,2500),spawnRactangle, -1);
 

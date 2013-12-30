@@ -21,7 +21,7 @@ local new = function(boja)
 	rec.x = math.random((rec.width + 10),W-10); rec.y = -60;
 		
 	-- Gravity --
-	physics.addBody(rec,{density=math.random(-20,20)});
+	physics.addBody(rec,{density=math.random(-10,10)});
 
 	return rec;
 end
