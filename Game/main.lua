@@ -4,5 +4,5 @@
 --
 -----------------------------------------------------------------------------------------
 
-local Rec1= display.newImage('prvi.png')
-local Rec2= display.newImage('drugi.png')
+local Rec1= display.newImage('Images/prvi.png')
+local Rec2= display.newImage('Images/drugi.png')
