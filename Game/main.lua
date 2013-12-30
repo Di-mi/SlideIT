@@ -9,7 +9,8 @@ W = display.viewableContentWidth;
 local rectangle=require("Rect");
 
 local physics = require("physics");
-local rec1=recatangle.new();
+local rec1=rectangle.new();
+
 --[[local rec1= display.newImage('Images/prvi.png');
 rec1.anchorX = 0; rec1.anchorY = rec1.height / 2; 
 rec1.x = 50; rec1.y = 50;
