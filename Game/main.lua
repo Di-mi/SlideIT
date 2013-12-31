@@ -17,6 +17,8 @@ physics.setDrawMode ("hybrid");
 local rectangle=require("rectangle");
 
 --  BODY  --
+display.setStatusBar( display.HiddenStatusBar )
+
 -- wallpaper --
 local background = display.newImageRect( "img/back.png", W, H);
 background.x = W/2;

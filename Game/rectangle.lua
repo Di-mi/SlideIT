@@ -7,7 +7,7 @@ local r={}
 local new = function(boja)
 	
 	local rec=nil;
-	
+
 	-- Type --
 	if(boja=='red') then
 		rec= display.newImage('img/prvi.png');
@@ -41,7 +41,9 @@ local new = function(boja)
 			transition.to(self,{x = e.x - tmp.x0, y = e.y - tmp.y0, time = 20});
 		elseif (e.phase == "ended") then
 
-			physics.addBody(self,"kinematic");
+			physics.addBody(self);
+
+			self:applyForce((e.x-self.x)/10, (e.y-self.y)/10, e.x - tmp.x0, e.y - tmp.y0)
 
 			display.getCurrentStage():setFocus(nil);
 		end
@@ -50,9 +52,27 @@ local new = function(boja)
 	rec:addEventListener("touch",rec);
 
 
+	-- Object Return --
 	return rec;
 end
 
-r.new=new;	
+r.new=new;
+
+--[[
+-- Object Deletion --
+	function rec:exitFrame(e)
+		if (rec.y == H-100) then
+			print ("rac");
+		end
+	end
+
+	rec:addEventListener("exitFrame",rec);
+	local event = {
+		name = "exitFrame",
+		target = rec
+	}
+	rec:dispatchEvent(event);
+]]--
+
 
 return r;
