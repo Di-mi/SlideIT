@@ -10,7 +10,7 @@ W = display.viewableContentWidth;
 --  DEFAULT MODULES  --	
 local physics = require("physics");
 physics.start();
-physics.setGravity(0,1);
+physics.setGravity(0,0.5);
 physics.setDrawMode ("hybrid");
 
 --  CUSTOM MODULES  --

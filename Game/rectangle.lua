@@ -27,25 +27,33 @@ local new = function(boja)
 	-- Touch --
 	function rec:touch(e)
 		local tmp = e.target
-
+		
 		if (e.phase == "began") then
+
+			tmp.x0 = e.x - tmp.x;
+			tmp.y0 = e.y - tmp.y;
 
 			physics.removeBody(self);
 
-			tmp.x0 = e.x - tmp.x
-			tmp.y0 = e.y - tmp.y
 			
 			display.getCurrentStage():setFocus(e.target, e.id);
+
 		elseif (e.phase == "moved") then 
 
-			transition.to(self,{x = e.x - tmp.x0, y = e.y - tmp.y0, time = 20});
+			if (tmp.x0 ~= nil and tmp.y0 ~= nil) then
+				transition.to(self,{x = e.x - tmp.x0, y = e.y - tmp.y0, time = 20});
+			end
+
 		elseif (e.phase == "ended") then
 
 			physics.addBody(self);
 
-			self:applyForce((e.x-self.x)/10, (e.y-self.y)/10, e.x - tmp.x0, e.y - tmp.y0)
-
+			if (tmp.x0 ~= nil and tmp.y0 ~= nil) then
+				self:applyForce((e.x-self.x)/10, (e.y-self.y)/10, e.x - tmp.x0, e.y - tmp.y0)
+			end
+			
 			display.getCurrentStage():setFocus(nil);
+
 		end
 	end
 
