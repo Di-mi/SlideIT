@@ -11,11 +11,16 @@ W = display.viewableContentWidth;
 local physics = require("physics");
 physics.start();
 physics.setGravity(0,1);
+physics.setDrawMode ("hybrid");
 
 --  CUSTOM MODULES  --
 local rectangle=require("rectangle");
 
 --  BODY  --
+-- wallpaper --
+local background = display.newImageRect( "img/back.png", W, H);
+background.x = W/2;
+background.y = H/2;
 
 -- object creation --
 local function spawnRactangle()

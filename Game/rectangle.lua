@@ -18,7 +18,7 @@ local new = function(boja)
 
 	-- Position --
 	rec.anchorX = rec.width / 2; rec.anchorY = rec.height / 2; 
-	rec.x = math.random((rec.width + 10),W-10); rec.y = 0;
+	rec.x = math.random((rec.width + 10),W-10); rec.y = -10;
 		
 	-- Gravity --
 	physics.addBody(rec,{density=math.random(-10,10)});
@@ -48,6 +48,7 @@ local new = function(boja)
 	end
 
 	rec:addEventListener("touch",rec);
+
 
 	return rec;
 end
