@@ -24,9 +24,11 @@ local background = display.newImageRect( "img/back.png", W, H);
 background.x = W/2;
 background.y = H/2;
 
+local food = {"bread", "beacon"};
+
 -- object creation --
 local function spawnRactangle()
-	local pravi=rectangle.new('purple');
+	local pravi=rectangle.new(food[math.random(1,2)]);
 end
 
 tmr = timer.performWithDelay(math.random(2000,2500),spawnRactangle, -1);

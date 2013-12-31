@@ -9,11 +9,11 @@ local new = function(boja)
 	local rec=nil;
 
 	-- Type --
-	if(boja=='red') then
-		rec= display.newImage('img/prvi.png');
+	if(boja=="bread") then
+		rec= display.newImage('img/bread.png');
 	end
-	if(boja=='purple') then
-		rec= display.newImage('img/drugi.png');
+	if(boja=="beacon") then
+		rec= display.newImage('img/beacon.png');
 	end	
 
 	-- Position --
