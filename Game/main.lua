@@ -1,4 +1,4 @@
-	-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
 --
 -- main.lua
 --
@@ -11,7 +11,7 @@ W = display.viewableContentWidth;
 local physics = require("physics");
 physics.start();
 physics.setGravity(0,0.5);
-physics.setDrawMode ("hybrid");
+--physics.setDrawMode ("hybrid");
 
 --  CUSTOM MODULES  --
 local rectangle=require("rectangle");
