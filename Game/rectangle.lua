@@ -35,13 +35,13 @@ local new = function(boja)
 
 			physics.removeBody(self);
 
-			
+			local t=e.y;
 			display.getCurrentStage():setFocus(e.target, e.id);
 
 		elseif (e.phase == "moved") then 
 
 			if (tmp.x0 ~= nil and tmp.y0 ~= nil) then
-				transition.to(self,{x = e.x - tmp.x0, y = e.y - tmp.y0, time = 20});
+				transition.to(self,{x = e.x - tmp.x0, y = t, time = 20});
 			end
 
 		elseif (e.phase == "ended") then
